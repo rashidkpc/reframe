@@ -1,2 +1,1 @@
-# reframe
-YA experimental kibana plugin
+# reframe 
