@@ -1,7 +1,7 @@
 import 'ui/chrome';
 import 'ui/autoload/all';
 import './directives/react';
-import Connect from './components/connect'
+import App from './components/app'
 
 var app = require('ui/modules').get('apps/reframe', []);
 
@@ -14,5 +14,5 @@ require('ui/routes')
 app
 .controller('reframe', function ($scope, timefilter) {
   timefilter.enabled = true;
-  $scope.component = Connect;
+  $scope.component = App;
 });
