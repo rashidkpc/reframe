@@ -9,9 +9,6 @@ const ConnectionWrap = React.createClass({
     return (
       <div>
         <code>{JSON.stringify(this.props.connection, null, 2)}</code>
-
-        Beer: {this.state.beer}
-        <button onClick={() => this.setState({beer: this.state.beer + 1})}>More beer!</button>
       </div>
     );
   }
