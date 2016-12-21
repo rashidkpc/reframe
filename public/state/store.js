@@ -22,11 +22,6 @@ const store = (state = initialState, action) => {
       return Object.assign({}, state, {
         connect: action.to
       });
-
-    case 'SHOW_CONNECT':
-      return Object.assign({}, state, {
-        dialogs: Object.assign({}, state.dialogs, {connect: action.to})
-      });
     default:
       return state;
   }
