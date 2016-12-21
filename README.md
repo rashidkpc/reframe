@@ -20,6 +20,20 @@
       {model: 'impreza', segment: 'sedan', price: 16000},
       {model: 'outback', segment: 'SUV', price: 25000}
     ]
+  },
+  view: {
+    type: 'table',
+    properties: {}
+  }
+}
+```
+
+```
+{
+  type: 'connect'
+  to: {
+    type: 'CSV',
+    value: '......'
   }
 }
 ```
