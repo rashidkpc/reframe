@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Connection from 'plugins/reframe/components/view/connection';
-
 const ConnectionWrap = React.createClass({
   render() {
     return (
-      <Connection connection={this.props.connection}></Connection>
+      <code>{JSON.stringify(this.props.connection, null, 2)}</code>
     );
   }
 });

@@ -1,8 +1,8 @@
 import React from 'react';
-import Connect from './connect/index';
+import Connect from 'plugins/reframe/containers/connect/connect';
 import Connection from 'plugins/reframe/containers/view/connection';
-export default React.createClass({
 
+export default React.createClass({
   render() {
     const types = [
       { id: 'csv', name: 'CSV', help: 'Upload a CSV file' },
@@ -24,5 +24,4 @@ export default React.createClass({
       </div>
     );
   }
-
 });
