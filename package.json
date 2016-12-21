@@ -20,7 +20,6 @@
     "gulp-gzip": "^1.2.0",
     "gulp-tar": "^1.8.0",
     "gulp-util": "^3.0.7",
-    "lodash": "^3.10.1",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.5.0",
     "rsync": "^0.4.0"
@@ -31,6 +30,9 @@
     "babel-register": "^6.3.13",
     "bootstrap": "^3.3.6",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "lodash": "^4.16.1",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0"
   }
 }
