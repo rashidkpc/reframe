@@ -1,7 +1,9 @@
 import 'ui/chrome';
 import 'ui/autoload/all';
 import './directives/react';
-import App from './components/app'
+import rootComponent from './components/index';
+
+require('./main.less');
 
 var app = require('ui/modules').get('apps/reframe', []);
 
@@ -14,5 +16,5 @@ require('ui/routes')
 app
 .controller('reframe', function ($scope, timefilter) {
   timefilter.enabled = true;
-  $scope.component = App;
+  $scope.component = rootComponent;
 });
