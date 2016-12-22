@@ -14,6 +14,8 @@ export default React.createClass({
     return () => this.setState({connectSource: type});
   },
   render() {
+    const source = this.state.connectSource;
+    const SourceForm = _.get(source, 'form');
     const typeList = _.map(this.props.types, (type, name) => (
       <TypeSelect
         key={type.id}
@@ -23,19 +25,17 @@ export default React.createClass({
       </TypeSelect>
     ));
 
-    const connectSource = (
-      <ConnectSource source={this.state.connectSource} cancel={this.selectType(null)}></ConnectSource>
+    const connectSourceDialog = (
+      <ConnectSource source={source} done={this.selectType(null)}><SourceForm></SourceForm></ConnectSource>
     );
 
     return (
       <div className="reframe--connect">
         Select one of the connectors below to load data into the frame
         <div>
-          {this.state.connectSource ? connectSource : typeList}
+          {this.state.connectSource ? connectSourceDialog : typeList}
         </div>
       </div>
     );
   }
-
-
 });

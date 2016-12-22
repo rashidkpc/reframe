@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 
 export default React.createClass({
   render() {
+    const source = this.props.source;
+
     return (
       <div className="reframe--connect-source">
-        <code>{JSON.stringify(this.props.source,null,' ')}</code>
+        {this.props.children}
         <button
           className="btn btn-warning"
-          onClick={this.props.cancel}>
+          onClick={this.props.done}>
           Cancel
         </button>
       </div>

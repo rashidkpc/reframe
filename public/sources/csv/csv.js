@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default {
   id: 'csv',
   name: 'CSV',
@@ -13,5 +15,6 @@ export default {
     };
 
     return dataframe;
-  }
+  },
+  form: () => (<div>CSV over here!</div>)
 };

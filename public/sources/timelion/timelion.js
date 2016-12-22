@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default {
   id: 'timelion',
   name: 'Timelion',
@@ -13,5 +15,8 @@ export default {
     };
 
     return dataframe;
-  }
+  },
+  form: () => (
+    <div>Timelion RAWR</div>
+  )
 };
