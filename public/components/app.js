@@ -1,20 +1,17 @@
 import React from 'react';
 import Connect from 'plugins/reframe/containers/connect/connect';
 import Connection from 'plugins/reframe/containers/view/connection';
+import connectionSources from 'plugins/reframe/sources';
 
 export default React.createClass({
   render() {
-    const types = [
-      { id: 'csv', name: 'CSV', help: 'Upload a CSV file' },
-      { id: 'timelion', name: 'Timelion', help: 'Connect using a timelion expression'},
-      { id: 'es_queries', name: 'Elasticsearch Query List', help: 'Use a list of Elasticsearch Lucene queries'},
-    ];
+    const sources = connectionSources;
 
     return (
       <div className="reframe--content">
         <div>
           <h4>Connect to data</h4>
-          <Connect types={types}></Connect>
+          <Connect types={sources}></Connect>
         </div>
 
         <div>

@@ -2,18 +2,19 @@ import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import TypeSelect from 'plugins/reframe/components/type_select';
+import ConnectSource from 'plugins/reframe/containers/connect_source/connect_source';
 import './connect.less';
 
 export default React.createClass({
 
   getInitialState() {
-    return {connectDialog: null};
+    return {connectSource: null};
   },
   selectType(type) {
-    return () => this.setState({connectDialog: type});
+    return () => this.setState({connectSource: type});
   },
   render() {
-    const typeList = this.props.types.map((type) => (
+    const typeList = _.map(this.props.types, (type, name) => (
       <TypeSelect
         key={type.id}
         type={type}
@@ -22,19 +23,15 @@ export default React.createClass({
       </TypeSelect>
     ));
 
-    const connectDialog = (
-      <button
-        className="btn btn-warning"
-        onClick={this.selectType(null)}>
-        Cancel
-      </button>
+    const connectSource = (
+      <ConnectSource source={this.state.connectSource} cancel={this.selectType(null)}></ConnectSource>
     );
 
     return (
       <div className="reframe--connect">
         Select one of the connectors below to load data into the frame
         <div>
-          {this.state.connectDialog ? connectDialog : typeList}
+          {this.state.connectSource ? connectSource : typeList}
         </div>
       </div>
     );
