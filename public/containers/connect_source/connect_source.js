@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 export default React.createClass({
   render() {
     const source = this.props.source;
+    const Form = _.get(source, 'form');
 
     return (
       <div className="reframe--connect-source">
-        {this.props.children}
+        <Form></Form>
         <button
           className="btn btn-warning"
           onClick={this.props.done}>

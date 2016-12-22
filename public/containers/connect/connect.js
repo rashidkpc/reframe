@@ -26,7 +26,7 @@ export default React.createClass({
     ));
 
     const connectSourceDialog = (
-      <ConnectSource source={source} done={this.selectType(null)}><SourceForm></SourceForm></ConnectSource>
+      <ConnectSource source={source} done={this.selectType(null)}></ConnectSource>
     );
 
     return (
