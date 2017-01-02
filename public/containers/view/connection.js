@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ConnectionWrap = React.createClass({
+const Connection = React.createClass({
   getInitialState() {
     return {beer: 0};
   },
@@ -20,4 +20,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ConnectionWrap);
+export default connect(mapStateToProps)(Connection);
