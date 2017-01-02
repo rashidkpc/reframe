@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux';
-import promiseMiddleware from 'redux-promise';
+import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
 const initialState = {
-  isFetching: false,
+  inProgress: 0,
   dialogs: {
     connect: null
   },
@@ -24,5 +24,5 @@ const initialState = {
 export default createStore(
   rootReducer,
   initialState,
-  applyMiddleware(promiseMiddleware)
+  applyMiddleware(thunk)
 );

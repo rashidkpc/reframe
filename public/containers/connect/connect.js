@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import { connect as connectAction } from 'plugins/reframe/state/actions';
+import { sourceConnect } from 'plugins/reframe/state/actions';
 import ConnectForm from './connect_form';
 
 const Connect = React.createClass({
@@ -12,7 +12,7 @@ const Connect = React.createClass({
         // Now in theory we can dispatch a promise here.
         // But the right way todo it is to have the CONNECT action create the promise,
         // then dispatch *that*
-        dispatch(connectAction({to: source, props: formData}));
+        dispatch(sourceConnect({to: source, props: formData}));
       };
     };
   },
