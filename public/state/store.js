@@ -1,10 +1,15 @@
+import { createStore, applyMiddleware } from 'redux';
+import promiseMiddleware from 'redux-promise';
+import rootReducer from './reducers';
+
 const initialState = {
+  isFetching: false,
   dialogs: {
     connect: null
   },
   connect: {
-    type: 'null',
-    value: ''
+    to: null,
+    props: {}
   },
   data: {
     header: {},
@@ -16,15 +21,8 @@ const initialState = {
   }
 };
 
-const store = (state = initialState, action) => {
-  switch (action.type) {
-    case 'CONNECT':
-      return Object.assign({}, state, {
-        connect: action.to
-      });
-    default:
-      return state;
-  }
-};
-
-export default store;
+export default createStore(
+  rootReducer,
+  initialState,
+  applyMiddleware(promiseMiddleware)
+);
