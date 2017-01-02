@@ -10,11 +10,11 @@
             "outback","SUV",25000`
   },
   data: {
-    header: {
-      model: { type: 'string' },
-      segment: { type: 'string' },
-      price: { type: 'number' }
-    },
+    columns: [
+      {name: 'model', type: 'string' },
+      {name: 'segment', type: 'string' },
+      {name: 'price', type: 'number' },
+    ],
     rows: [
       {model: 'crosstrek', segment: 'SUV', price: 21000},
       {model: 'impreza', segment: 'sedan', price: 16000},
