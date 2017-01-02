@@ -16,7 +16,7 @@ const Connection = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    connection: state.connect
+    connection: state.data
   };
 }
 
