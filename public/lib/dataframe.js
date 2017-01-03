@@ -1,8 +1,10 @@
 import _ from 'lodash';
+import Row from './row';
+import Columns from './columns';
 
 export default class Dataframe {
   /*
-    Data format:
+    Constructor:
     {
       columns: [
         {name: 'model', type: 'string' },
@@ -18,12 +20,17 @@ export default class Dataframe {
   */
   constructor(data) {
     // Consider using immutable.js in this class
-    this.columns = data.columns;
-    this.rows = data.rows;
+    this.columns = new Columns(data.columns);
+    this.rows = _.map(data.rows, (row) => new Row(this.columns, row));
   }
 
   get toTuples() {
-    const columns = _.map(this.columns, column => _.map(this.rows, column.name));
-    return _.zip.apply(this, columns);
+    return _.map(this.rows, (row) => row.ordered);
   }
+
+  get columnsByName() {
+    return _.keyBy(this.columns, 'name');
+  }
+
+
 }
