@@ -28,9 +28,4 @@ export default class Dataframe {
     return _.map(this.rows, (row) => row.ordered);
   }
 
-  get columnsByName() {
-    return _.keyBy(this.columns, 'name');
-  }
-
-
 }
