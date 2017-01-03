@@ -1,15 +1,34 @@
 import React from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import Dataframe from 'plugins/reframe/lib/dataframe';
+
+import './table.less';
 
 const Connection = React.createClass({
   getInitialState() {
     return {beer: 0};
   },
   render() {
+    const header = _.map(this.props.dataframe.columns.ordered, (column) => {
+      return (<th className={`reframe--type--${column.type}`} key={column.name}>{column.name}</th>);
+    });
+    const rows = _.map(this.props.dataframe.toTuples, (row, i) => {
+      const fields = _.map(row, field => (
+        <td className={`reframe--type--${field.column.type}`} key={field.column.name}>
+          {field.value}
+        </td>)
+      );
+
+      return (<tr key={i}>{fields}</tr>);
+    });
     return (
       <div>
-        <code>{JSON.stringify(this.props.connection, null, 2)}</code>
+        <table className="table">
+          <thead><tr>{header}</tr></thead>
+          <tbody>{rows}</tbody>
+        </table>
+        <pre>{JSON.stringify(this.props.dataframe, null, ' ')}</pre>
       </div>
     );
   }
@@ -17,7 +36,7 @@ const Connection = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    connection: new Dataframe(state.data)
+    dataframe: new Dataframe(state.data)
   };
 }
 
