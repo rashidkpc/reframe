@@ -11,6 +11,10 @@ export default React.createClass({
       this.setState(_.assign({}, this.state, {[prop]: event.target.value}));
     };
   },
+  save() {
+    this.props.save(this.state);
+    this.props.done();
+  },
   render() {
     const source = this.props.source;
     const Form = _.get(source, 'form');
@@ -21,7 +25,7 @@ export default React.createClass({
         <div className="reframe--connect-buttons">
           <button
             className="btn btn-success"
-            onClick={this.props.save(this.state)}>
+            onClick={this.save}>
             Save
           </button>
           <button

@@ -8,12 +8,10 @@ const Connect = React.createClass({
   save(source) {
     const { dispatch } = this.props;
     return (formData) => {
-      return () => {
-        // Now in theory we can dispatch a promise here.
-        // But the right way todo it is to have the CONNECT action create the promise,
-        // then dispatch *that*
-        dispatch(sourceConnect({to: source, props: formData}));
-      };
+      // Now in theory we can dispatch a promise here.
+      // But the right way todo it is to have the CONNECT action create the promise,
+      // then dispatch *that*
+      dispatch(sourceConnect({to: source, props: formData}));
     };
   },
   render() {
