@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Dataframe from 'plugins/reframe/lib/dataframe';
 
 const Connection = React.createClass({
   getInitialState() {
@@ -16,7 +17,7 @@ const Connection = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    connection: state.data
+    connection: new Dataframe(state.data)
   };
 }
 
