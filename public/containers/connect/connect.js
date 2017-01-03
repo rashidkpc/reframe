@@ -16,9 +16,15 @@ const Connect = React.createClass({
   },
   render() {
     return (
-      <ConnectForm save={this.save} types={this.props.types}></ConnectForm>
+      <ConnectForm save={this.save} connection={this.props.connection} types={this.props.types}></ConnectForm>
     );
   }
 });
 
-export default connect()(Connect);
+function mapStateToProps(state) {
+  return {
+    connection: state.connect
+  };
+}
+
+export default connect(mapStateToProps)(Connect);

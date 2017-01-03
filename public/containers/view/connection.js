@@ -31,7 +31,7 @@ const Connection = React.createClass({
           <thead><tr>{header}</tr></thead>
           <tbody>{rows}</tbody>
         </table>
-        <pre>{JSON.stringify(this.props.dataframe, null, ' ')}</pre>
+        <pre>{JSON.stringify(this.props.connect, null, ' ')}</pre>
       </div>
     );
   }
@@ -39,7 +39,8 @@ const Connection = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    dataframe: new Dataframe(state.data)
+    dataframe: new Dataframe(state.data),
+    connect: state.connect
   };
 }
 

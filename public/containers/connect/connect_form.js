@@ -15,7 +15,7 @@ export default React.createClass({
   },
   render() {
     const source = this.state.connectSource;
-    const SourceForm = _.get(source, 'form');
+    const current = this.props.connection;
     const typeList = _.map(this.props.types, (type, name) => (
       <TypeSelect
         key={type.id}
@@ -26,7 +26,12 @@ export default React.createClass({
     ));
 
     const connectSourceDialog = (
-      <ConnectSource source={source} save={this.props.save(source)} done={this.selectType(null)}></ConnectSource>
+      <ConnectSource
+        source={source}
+        current={current}
+        save={this.props.save(source)}
+        done={this.selectType(null)}>
+      </ConnectSource>
     );
 
     return (

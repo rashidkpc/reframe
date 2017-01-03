@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 
 export default React.createClass({
   getInitialState() {
-    return this.props.source.defaults || {};
+    if (_.get(this.props.current.to, 'id') === this.props.source.id) {
+      return this.props.current.props;
+    } else {
+      return this.props.source.defaults || {};
+    }
   }, // This could be initialized with the defaults for the form right?
   updateFormState(prop) {
     return (event) => {
