@@ -7,8 +7,8 @@ export default class Row {
     if (!(columns instanceof Columns)) throw 'columns must be an instance of Columns';
 
     this.columns = columns;
-    this.ordered = _.map(this.columns.ordered, column => new Field(row[column.name], column));
-    this.named = _.mapValues(row, (value, name) => new Field(value, columns.named[name]));
+    this.ordered = _.map(this.columns.ordered, column => new Field(row, column));
+    this.named = _.mapValues(row, (value, name) => new Field(row, columns.named[name]));
   }
 
 }
