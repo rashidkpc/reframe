@@ -19,7 +19,10 @@ module.exports = function (kibana) {
           };
         }
       },
-      hacks: [],
+      hacks: [
+        'plugins/reframe/sources/csv/csv',
+        'plugins/reframe/sources/timelion/timelion',
+      ],
     },
 
     config: function (Joi) {

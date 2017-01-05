@@ -16,7 +16,7 @@ const Connect = React.createClass({
   },
   render() {
     return (
-      <ConnectForm save={this.save} connection={this.props.connection} types={this.props.types}></ConnectForm>
+      <ConnectForm save={this.save} connection={this.props.connection} sources={this.props.sources}></ConnectForm>
     );
   }
 });

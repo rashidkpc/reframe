@@ -1,6 +1,7 @@
 import React from 'react';
+import sources from 'plugins/reframe/sources/sources';
 
-export default {
+sources.push({
   id: 'timelion',
   name: 'Timelion',
   help: 'Use timelion to fetch data',
@@ -19,4 +20,4 @@ export default {
   form: () => (
     <div>Timelion RAWR</div>
   )
-};
+});

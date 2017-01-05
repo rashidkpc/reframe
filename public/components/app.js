@@ -1,7 +1,7 @@
 import React from 'react';
 import Connect from 'plugins/reframe/containers/connect/connect';
 import Connection from 'plugins/reframe/containers/view/connection';
-import connectionSources from 'plugins/reframe/sources';
+import connectionSources from 'plugins/reframe/sources/sources';
 import ViewSwitch from 'plugins/reframe/containers/view/switcher';
 
 export default React.createClass({
@@ -12,7 +12,7 @@ export default React.createClass({
       <div className="reframe--content">
         <div>
           <h4>Connect to data</h4>
-          <Connect types={sources}></Connect>
+          <Connect sources={sources}></Connect>
         </div>
 
         <div>

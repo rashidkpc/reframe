@@ -16,11 +16,11 @@ export default React.createClass({
   render() {
     const source = this.state.connectSource;
     const current = this.props.connection;
-    const typeList = _.map(this.props.types, (type, name) => (
+    const typeList = _.map(this.props.sources, (source) => (
       <TypeSelect
-        key={type.id}
-        type={type}
-        onSelectClick={this.selectType(type)}
+        key={source.id}
+        type={source}
+        onSelectClick={this.selectType(source)}
       >
       </TypeSelect>
     ));
