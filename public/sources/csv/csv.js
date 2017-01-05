@@ -39,10 +39,10 @@ sources.push(new Source('csv', {
   // Make sure to call commit('someProperty') to tell reframe you have a saveable change.
   // Simply use onChange={commit('someProperty')} as your default. Think of it as ng-model, sort of.
   // The data will go "up" using commit, and come back down on the value attribute.
-  form: ({values, commit}) => (
+  form: ({value, commit}) => (
     <div className="reframe--csv">
-      <div className="reframe--csv--character-count">Length: {_.get(values, 'csv.length')}</div>
-      <textarea className="form-control" rows="10" onChange={commit('csv')} value={values.csv}></textarea>
+      <div className="reframe--csv--character-count">Length: {_.get(value, 'csv.length')}</div>
+      <textarea className="form-control" rows="10" onChange={commit('csv')} value={value.csv}></textarea>
     </div>
   )
 }));

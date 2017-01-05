@@ -16,6 +16,7 @@ export default React.createClass({
     };
   },
   save() {
+    console.log('Ran!');
     this.props.save(this.state);
   },
   render() {
@@ -28,7 +29,7 @@ export default React.createClass({
         <div className="reframe--connect-source--source-name">
           <i className="fa fa-database"></i> {displayName} (<a onClick={done}>Change</a>)
         </div>
-        <Form values={this.state} commit={this.updateFormState}></Form>
+        <Form value={this.state} commit={this.updateFormState} run={this.save}></Form>
         <div className="reframe--connect-buttons">
           <button
             className="btn btn-success"
