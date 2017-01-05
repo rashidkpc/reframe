@@ -22,9 +22,16 @@ function rootReducer(state = {}, action) {
       });
 
     case 'SOURCE_CONNECT_END':
-      console.log(action);
       return Object.assign({}, state, {
         data: action.payload
+      });
+
+    case 'VIEW_SET':
+      return Object.assign({}, state, {
+        view: {
+          type: action.payload.type,
+          args: {}
+        }
       });
 
     default:

@@ -23,7 +23,7 @@
   },
   view: {
     type: 'table',
-    properties: {}
+    args: {}
   }
 }
 ```

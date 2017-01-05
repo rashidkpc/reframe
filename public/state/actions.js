@@ -7,8 +7,8 @@ const fetchStart = createAction('FETCH_START');
 const fetchEnd = createAction('FETCH_END');
 const fetchFail = createAction('FETCH_FAIL');
 
+export const viewSet = createAction('VIEW_SET');
 export const sourceConnectStart = createAction('SOURCE_CONNECT_START');
-
 export const sourceConnectEnd = createAction('SOURCE_CONNECT_END');
 
 export function sourceConnect(payload) {

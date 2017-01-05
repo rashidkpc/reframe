@@ -17,7 +17,7 @@ const initialState = {
   },
   view: {
     type: 'table',
-    properties: {}
+    args: {}
   }
 };
 
