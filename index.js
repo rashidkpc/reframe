@@ -22,6 +22,9 @@ module.exports = function (kibana) {
       hacks: [
         'plugins/reframe/sources/csv/csv',
         'plugins/reframe/sources/timelion/timelion',
+
+        'plugins/reframe/elements/json/json',
+        'plugins/reframe/elements/table/table',
       ],
     },
 

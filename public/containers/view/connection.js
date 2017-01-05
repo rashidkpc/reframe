@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import Dataframe from 'plugins/reframe/lib/dataframe/dataframe';
-import elements from 'plugins/reframe/elements/index';
+import elements from 'plugins/reframe/elements/elements';
 
 const Connection = React.createClass({
   getInitialState() {
@@ -10,7 +10,7 @@ const Connection = React.createClass({
   },
   render() {
     const { view, dataframe, connect } = this.props;
-    const Element = elements[view.type].template;
+    const Element = elements.byName[view.type].template;
     const args = {dataframe: dataframe};
     return (
       <div>

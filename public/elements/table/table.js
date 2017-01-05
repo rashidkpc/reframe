@@ -1,9 +1,11 @@
 import React from 'react';
 import Element from 'plugins/reframe/elements/element';
+import elements from 'plugins/reframe/elements/elements';
+
 import _ from 'lodash';
 import './table.less';
 
-export default new Element('table', {
+elements.push(new Element('table', {
   displayName: 'Table',
   template: ({args}) => {
     const dataframe = args.dataframe;
@@ -33,4 +35,4 @@ export default new Element('table', {
     );
 
   }
-});
+}));

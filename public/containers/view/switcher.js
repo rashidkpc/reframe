@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
 import Dataframe from 'plugins/reframe/lib/dataframe/dataframe';
-import elements from 'plugins/reframe/elements/index';
+import elements from 'plugins/reframe/elements/elements';
 import { viewSet } from 'plugins/reframe/state/actions';
 
 const ViewSwitch = React.createClass({
