@@ -2,11 +2,11 @@ import React from 'react';
 import _ from 'lodash';
 import './csv.less';
 import {parse} from './parse';
+import Source from 'plugins/reframe/sources/source';
 import sources from 'plugins/reframe/sources/sources';
 
-sources.push({
-  id: 'csv',
-  name: 'CSV',
+sources.push(new Source('csv', {
+  displayName: 'CSV',
   help: 'Import a CSV',
   toDataframe: function (value) {
     const dataframe =   {
@@ -45,4 +45,4 @@ sources.push({
       <textarea className="form-control" rows="10" onChange={commit('csv')} value={values.csv}></textarea>
     </div>
   )
-});
+}));

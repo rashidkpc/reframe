@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import { connect } from 'react-redux';
-import TypeSelect from 'plugins/reframe/components/type_select';
+import SourceSelect from 'plugins/reframe/components/source_select';
 import ConnectSource from 'plugins/reframe/containers/connect_source/connect_source';
 import './connect.less';
 
@@ -17,12 +17,12 @@ export default React.createClass({
     const source = this.state.connectSource;
     const current = this.props.connection;
     const typeList = _.map(this.props.sources, (source) => (
-      <TypeSelect
+      <SourceSelect
         key={source.id}
         type={source}
         onSelectClick={this.selectType(source)}
       >
-      </TypeSelect>
+      </SourceSelect>
     ));
 
     const connectSourceDialog = (
