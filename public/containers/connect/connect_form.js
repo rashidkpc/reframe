@@ -16,7 +16,7 @@ export default React.createClass({
   render() {
     const source = this.state.connectSource;
     const current = this.props.connection;
-    const typeList = _.map(this.props.sources, (source) => (
+    const sourceList = _.map(this.props.sources, (source) => (
       <SourceSelect
         key={source.id}
         type={source}
@@ -25,21 +25,26 @@ export default React.createClass({
       </SourceSelect>
     ));
 
+    const sourceListDialog = (
+      <div>
+        Select one of the connectors below to load data into the frame
+        {sourceList}
+      </div>
+    );
+
     const connectSourceDialog = (
       <ConnectSource
         source={source}
         current={current}
         save={this.props.save(source)}
         done={this.selectType(null)}>
+        Here is also some stuff
       </ConnectSource>
     );
 
     return (
       <div className="reframe--connect">
-        Select one of the connectors below to load data into the frame
-        <div>
-          {this.state.connectSource ? connectSourceDialog : typeList}
-        </div>
+          {this.state.connectSource ? connectSourceDialog : sourceListDialog}
       </div>
     );
   }

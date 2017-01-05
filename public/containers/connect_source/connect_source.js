@@ -17,25 +17,23 @@ export default React.createClass({
   },
   save() {
     this.props.save(this.state);
-    this.props.done();
   },
   render() {
-    const source = this.props.source;
+    const {source, done} = this.props;
+    const displayName = source.displayName;
     const Form = _.get(source, 'form');
 
     return (
       <div className="reframe--connect-source">
+        <div className="reframe--connect-source--source-name">
+          <i className="fa fa-database"></i> {displayName} (<a onClick={done}>Change</a>)
+        </div>
         <Form values={this.state} commit={this.updateFormState}></Form>
         <div className="reframe--connect-buttons">
           <button
             className="btn btn-success"
             onClick={this.save}>
-            Save
-          </button>
-          <button
-            className="btn btn-warning"
-            onClick={this.props.done}>
-            Cancel
+            Apply
           </button>
         </div>
       </div>
