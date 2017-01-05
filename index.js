@@ -12,10 +12,13 @@ module.exports = function (kibana) {
         main: 'plugins/reframe/app',
         injectVars: function (server) {
           var config = server.config();
+          var basePath = config.get('server.basePath');
+
           return {
             kbnIndex: config.get('kibana.index'),
             esShardTimeout: config.get('elasticsearch.shardTimeout'),
-            esApiVersion: config.get('elasticsearch.apiVersion')
+            esApiVersion: config.get('elasticsearch.apiVersion'),
+            basePath
           };
         }
       },

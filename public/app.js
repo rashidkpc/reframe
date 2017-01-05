@@ -1,7 +1,11 @@
-import 'ui/chrome';
+import chrome from 'ui/chrome';
+import modules from 'ui/modules';
+
 import 'ui/autoload/all';
 import './directives/react';
-import rootComponent from './components/index';
+import './state/store_service';
+
+import rootComponent from './components/app';
 
 require('./main.less');
 
