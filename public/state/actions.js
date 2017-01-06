@@ -12,13 +12,15 @@ export const sourceConnectStart = createAction('SOURCE_CONNECT_START');
 export const sourceConnectEnd = createAction('SOURCE_CONNECT_END');
 
 export function sourceConnect(payload) {
-  const source = payload.to;
-  const props = payload.props;
-  return (dispatch) => {
+  const {to, props} = payload;
+
+  return (dispatch, getState) => {
+    const appData = getState().app;
+
     dispatch(sourceConnectStart(payload));
     dispatch(fetchStart());
     return Promise
-      .resolve(source.toDataframe(props))
+      .resolve(to.toDataframe(props, appData))
       .then(result => {
         dispatch(fetchEnd());
         dispatch(sourceConnectEnd(result));

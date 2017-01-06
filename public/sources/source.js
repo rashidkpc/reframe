@@ -13,7 +13,8 @@ export default class Source {
     // The function for turning the inputs into a dataframe.
     // Note that you should return the POJO for now, not a dataframe object.
     // You can return a promise here
-    this.toDataframe = props.toDataframe || function (value) {return value;};
+    // 'app' can be used to access app meta data in the store, such as basePath
+    this.toDataframe = props.toDataframe || function (value, app) {return value;};
 
   }
 }
